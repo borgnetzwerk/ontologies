@@ -13,8 +13,181 @@
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Declaration>
+        <Class IRI="#alphabet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#braille"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#braille_character"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#corpus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#grammar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#graphemes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#group"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#language"/>
     </Declaration>
+    <Declaration>
+        <Class IRI="#letters"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#logogram"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#morpheme"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#paragraph"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#phonemes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#phrase"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#physical_phenomena"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#semantic_building_block"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#sentence"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#set"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#speech_sounds"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#text"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#vocabulary"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#word"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_build_from"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_group_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_set_of"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#braille_character"/>
+        <Class IRI="#physical_phenomena"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#corpus"/>
+        <Class IRI="#group"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#corpus"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#is_group_of"/>
+            <Class IRI="#text"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#morpheme"/>
+        <Class IRI="#semantic_building_block"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#paragraph"/>
+        <Class IRI="#group"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#paragraph"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#is_group_of"/>
+            <Class IRI="#sentence"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#phrase"/>
+        <Class IRI="#semantic_building_block"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#phrase"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#is_build_from"/>
+            <Class IRI="#word"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sentence"/>
+        <Class IRI="#semantic_building_block"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sentence"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#is_build_from"/>
+            <Class IRI="#sentence"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#set"/>
+        <Class IRI="#group"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#speech_sounds"/>
+        <Class IRI="#physical_phenomena"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#text"/>
+        <Class IRI="#group"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#text"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#is_group_of"/>
+            <Class IRI="#paragraph"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#vocabulary"/>
+        <Class IRI="#set"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#vocabulary"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#is_set_of"/>
+            <Class IRI="#word"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#word"/>
+        <Class IRI="#semantic_building_block"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#word"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#is_build_from"/>
+            <Class IRI="#morpheme"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_group_of"/>
+        <Class IRI="#group"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_set_of"/>
+        <Class IRI="#set"/>
+    </ObjectPropertyDomain>
 </Ontology>
 
 
